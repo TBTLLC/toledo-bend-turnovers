@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toledo Bend Turnovers LLC</title>
+  <meta name="description" content="Vacation rental cleaning and turnover services for Toledo Bend Lake, Sabine Parish, and surrounding areas." />
+  <style>
+    :root{
+      --bg:#f8fbfb;
+      --card:#ffffff;
+      --text:#18333a;
+      --muted:#5f7880;
+      --teal:#4fb7b3;
+      --teal-dark:#2f8f8b;
+      --pink:#f2a8bf;
+      --pink-soft:#fdeaf1;
+      --line:#dceaea;
+      --shadow:0 12px 30px rgba(24,51,58,.08);
+      --radius:20px;
+      --max:1150px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(242,168,191,.22), transparent 28%),
+        radial-gradient(circle at top right, rgba(79,183,179,.18), transparent 28%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .container{width:min(calc(100% - 32px), var(--max));margin:0 auto}
+    .btn{
+      display:inline-block;
+      padding:14px 20px;
+      border-radius:999px;
+      font-weight:700;
+      transition:.2s ease;
+      border:1px solid transparent;
+    }
+    .btn-primary{
+      background:linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color:#fff;
+      box-shadow:var(--shadow);
+    }
+    .btn-primary:hover{transform:translateY(-1px)}
+    .btn-secondary{
+      background:#fff;
+      border-color:var(--line);
+    }
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(248,251,251,.88);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(220,234,234,.9);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      padding:14px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    .brand-badge{
+      width:42px;height:42px;border-radius:12px;
+      background:linear-gradient(135deg, var(--teal), var(--pink));
+      display:grid;place-items:center;
+      color:#fff;font-size:18px;font-weight:800;
+      box-shadow:var(--shadow);
+    }
+
+    .nav-links{
+      display:flex;
+      gap:18px;
+      flex-wrap:wrap;
+      color:var(--muted);
+      font-weight:600;
+      font-size:.96rem;
+    }
+
+    .hero{
+      padding:78px 0 42px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:28px;
+      align-items:center;
+    }
+
+    .eyebrow{
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      padding:8px 14px;
+      border-radius:999px;
+      background:var(--pink-soft);
+      color:#9c5d74;
+      font-weight:700;
+      font-size:.92rem;
+      margin-bottom:18px;
+    }
+
+    h1,h2,h3{line-height:1.15;margin:0 0 14px}
+    h1{font-size:clamp(2.4rem, 5vw, 4.5rem)}
+    h2{font-size:clamp(1.8rem, 3vw, 2.6rem)}
+    h3{font-size:1.15rem}
+    p{margin:0 0 14px}
+    .lead{
+      font-size:1.08rem;
+      color:var(--muted);
+      max-width:700px;
+    }
+
+    .hero-actions{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:24px;
+    }
+
+    .hero-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      box-shadow:var(--shadow);
+      border-radius:28px;
+      padding:24px;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero-card::before{
+      content:"";
+      position:absolute;
+      inset:auto -40px -40px auto;
+      width:150px;height:150px;border-radius:50%;
+      background:rgba(242,168,191,.18);
+    }
+
+    .stat-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:18px;
+    }
+
+    .stat{
+      background:#fbfefe;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:16px;
+    }
+
+    .stat strong{
+      display:block;
+      font-size:1.25rem;
+      margin-bottom:6px;
+    }
+
+    section{
+      padding:42px 0;
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      align-items:end;
+      margin-bottom:24px;
+    }
+
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+
+    .icon{
+      width:46px;height:46px;border-radius:14px;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg, rgba(79,183,179,.15), rgba(242,168,191,.2));
+      margin-bottom:14px;
+      font-size:1.2rem;
+    }
+
+    .muted{color:var(--muted)}
+
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:20px;
+    }
+
+    .checklist{
+      list-style:none;
+      padding:0;margin:0;
+      display:grid;
+      gap:12px;
+    }
+
+    .checklist li{
+      display:flex;gap:10px;align-items:flex-start;
+      color:var(--text);
+    }
+
+    .check{
+      width:22px;height:22px;border-radius:999px;
+      background:linear-gradient(135deg, var(--teal), var(--teal-dark));
+      color:#fff;display:grid;place-items:center;
+      flex:0 0 22px;
+      font-size:.8rem;font-weight:800;
+      margin-top:2px;
+    }
+
+    .pricing{
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:18px;
+    }
+
+    .price-card{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+
+    .price-card.featured{
+      border:2px solid var(--teal);
+      transform:translateY(-4px);
+    }
+
+    .price{
+      font-size:1.9rem;
+      font-weight:800;
+      margin:6px 0 10px;
+    }
+
+    .tag{
+      display:inline-block;
+      font-size:.8rem;
+      font-weight:700;
+      color:#9c5d74;
+      background:var(--pink-soft);
+      padding:6px 10px;
+      border-radius:999px;
+      margin-bottom:10px;
+    }
+
+    .process{
+      counter-reset:step;
+      display:grid;
+      grid-template-columns:repeat(4, 1fr);
+      gap:18px;
+    }
+
+    .step{
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:20px;
+      box-shadow:var(--shadow);
+      position:relative;
+    }
+
+    .step::before{
+      counter-increment:step;
+      content:counter(step);
+      width:40px;height:40px;border-radius:50%;
+      display:grid;place-items:center;
+      background:linear-gradient(135deg, var(--teal), var(--pink));
+      color:#fff;font-weight:800;
+      margin-bottom:14px;
+    }
+
+    .cta{
+      background:
+        radial-gradient(circle at top right, rgba(242,168,191,.18), transparent 25%),
+        linear-gradient(135deg, #ffffff, #f6fbfb);
+      border:1px solid var(--line);
+      border-radius:30px;
+      box-shadow:var(--shadow);
+      padding:34px;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:24px;
+      align-items:center;
+    }
+
+    .contact-box{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:22px;
+      padding:22px;
+    }
+
+    .contact-list{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:14px;
+    }
+
+    .contact-list a{
+      color:var(--teal-dark);
+      font-weight:700;
+    }
+
+    footer{
+      padding:26px 0 50px;
+      color:var(--muted);
+      font-size:.95rem;
+    }
+
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      flex-wrap:wrap;
+      border-top:1px solid var(--line);
+      padding-top:20px;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,.split,.cta{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr 1fr}
+      .pricing,.process{grid-template-columns:1fr 1fr}
+    }
+
+    @media (max-width: 640px){
+      .nav{align-items:flex-start;flex-direction:column}
+      .cards,.pricing,.process,.stat-grid{grid-template-columns:1fr}
+      .section-head{display:block}
+      .hero{padding-top:52px}
+      .hero-card,.card,.price-card,.step,.contact-box,.cta{border-radius:20px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Toledo Bend Turnovers LLC home">
+        <span class="brand-badge">TB</span>
+        <span>Toledo Bend Turnovers LLC</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#services">Services</a>
+        <a href="#why-us">Why Choose Us</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#process">Process</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Guest-ready cleaning for lake properties & vacation rentals</div>
+          <h1>Clean, staged, and ready for five-star stays.</h1>
+          <p class="lead">
+            Toledo Bend Turnovers LLC helps hosts keep their properties fresh, polished, and guest-ready with detailed turnover cleaning, deep cleaning, move-out service, and post-construction cleanup throughout the Toledo Bend Lake area.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:13184310374">Call 318-431-0374</a>
+            <a class="btn btn-secondary" href="#pricing">View Starting Rates</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>What makes us different</h3>
+          <p class="muted">
+            We clean with the guest experience in mind. That means attention to the details hosts care about most: clean appliances, smooth bedding, restocked essentials, staged spaces, and a final guest-ready check before arrival.
+          </p>
+          <div class="stat-grid">
+            <div class="stat">
+              <strong>Turnovers</strong>
+              <span class="muted">Fast, detailed resets between guests</span>
+            </div>
+            <div class="stat">
+              <strong>Deep Cleans</strong>
+              <span class="muted">Extra detail for seasonal or heavy-use needs</span>
+            </div>
+            <div class="stat">
+              <strong>Move-Outs</strong>
+              <span class="muted">Fresh start cleanups for vacant properties</span>
+            </div>
+            <div class="stat">
+              <strong>Post-Construction</strong>
+              <span class="muted">Dust, debris, and finish cleanup after work is done</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Services designed for vacation rental owners</h2>
+            <p class="muted">Flexible cleaning options based on your property, schedule, and turnover needs.</p>
+          </div>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="icon">🛏️</div>
+            <h3>Turnover Cleaning</h3>
+            <p class="muted">
+              Full guest-ready turnover service including trash removal, bathroom sanitizing, kitchen reset, appliance cleaning, fresh presentation, and detailed room checks.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">✨</div>
+            <h3>Deep Cleaning</h3>
+            <p class="muted">
+              Ideal for seasonal refreshes and high-traffic properties. May include baseboards, fans, wall washing, organization, under-furniture cleaning, and more.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">📦</div>
+            <h3>Move-Out Cleaning</h3>
+            <p class="muted">
+              Thorough vacant-property cleaning to help prepare for new guests, tenants, listing photos, or sale readiness.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🏗️</div>
+            <h3>Post-Construction Cleanup</h3>
+            <p class="muted">
+              Detailed cleanup after remodeling or construction work, including fine dust removal and polishing for a finished look.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🧺</div>
+            <h3>Laundry & Reset Support</h3>
+            <p class="muted">
+              On-site laundry support when available, bed resets to resort-style standards, and careful presentation that helps protect the guest experience.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="icon">🧴</div>
+            <h3>Restocking & Final Check</h3>
+            <p class="muted">
+              Supply restocking if items are provided by the host, plus a final inspection to help catch anything that could affect guest satisfaction.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="why-us">
+      <div class="container split">
+        <div class="card">
+          <h2>Why hosts choose Toledo Bend Turnovers</h2>
+          <p class="muted">
+            This business was built around the standards expected in hospitality. Every clean is approached with care, consistency, and an eye for the details guests notice.
+          </p>
+          <ul class="checklist">
+            <li><span class="check">✓</span><span>Vacation-rental focused cleaning, not generic residential cleaning</span></li>
+            <li><span class="check">✓</span><span>Strong staging and reset attention for a polished, guest-ready finish</span></li>
+            <li><span class="check">✓</span><span>Appliances cleaned inside and out during turnover service</span></li>
+            <li><span class="check">✓</span><span>Drawers, cabinets, closets, under beds, and hidden areas checked as needed</span></li>
+            <li><span class="check">✓</span><span>Sweeping and straightening of porches and patios for better curb appeal</span></li>
+            <li><span class="check">✓</span><span>Easy communication and service tailored to host expectations</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h2>Service area</h2>
+          <p class="muted">
+            Proudly serving the Toledo Bend Lake area, including Sabine Parish and nearby surrounding communities.
+          </p>
+          <h3 style="margin-top:22px;">Best fit for</h3>
+          <ul class="checklist">
+            <li><span class="check">✓</span><span>Airbnb and short-term rental owners</span></li>
+            <li><span class="check">✓</span><span>Lake homes and fishing camp properties</span></li>
+            <li><span class="check">✓</span><span>Move-out and property refresh cleanings</span></li>
+            <li><span class="check">✓</span><span>Renovation and post-construction projects</span></li>
+          </ul>
+
+          <div style="margin-top:24px;padding:18px;border-radius:18px;background:var(--pink-soft);">
+            <strong>Property note:</strong>
+            <p style="margin:8px 0 0;">Exterior cleaning is not included, but porches and patios can be swept and straightened as part of presentation-focused service.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Starting rates</h2>
+            <p class="muted">Exact pricing depends on property size, condition, turnover needs, and laundry/setup requirements.</p>
+          </div>
+        </div>
+
+        <div class="pricing">
+          <article class="price-card featured">
+            <span class="tag">Most requested</span>
+            <h3>Vacation Rental Turnover</h3>
+            <div class="price">Starting at $75</div>
+            <p class="muted">Designed for guest check-out to check-in resets with staging and presentation in mind.</p>
+          </article>
+
+          <article class="price-card">
+            <h3>Deep Cleaning</h3>
+            <div class="price">$0.15–$0.20<span style="font-size:1rem;font-weight:700;">/sq ft</span></div>
+            <p class="muted">A more detailed clean for buildup, seasonal refreshes, or first-time service.</p>
+          </article>
+
+          <article class="price-card">
+            <h3>Move-Out Cleaning</h3>
+            <div class="price">Starting at $0.15<span style="font-size:1rem;font-weight:700;">/sq ft</span></div>
+            <p class="muted">Great for vacant properties that need a full reset before the next step.</p>
+          </article>
+
+          <article class="price-card">
+            <h3>Post-Construction</h3>
+            <div class="price">$0.25–$0.35<span style="font-size:1rem;font-weight:700;">/sq ft</span></div>
+            <p class="muted">Cleanup for remodels and completed projects that need the dust and debris gone.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Simple process</h2>
+            <p class="muted">Easy for hosts, smooth for guests, and built around reliable property care.</p>
+          </div>
+        </div>
+
+        <div class="process">
+          <article class="step">
+            <h3>Reach out</h3>
+            <p class="muted">Send your property details, cleaning type, and location.</p>
+          </article>
+
+          <article class="step">
+            <h3>Get a quote</h3>
+            <p class="muted">Pricing is based on your property size, condition, and service needs.</p>
+          </article>
+
+          <article class="step">
+            <h3>Schedule service</h3>
+            <p class="muted">Choose the date that works best for your turnover, deep clean, or project cleanup.</p>
+          </article>
+
+          <article class="step">
+            <h3>Welcome your guests</h3>
+            <p class="muted">Enjoy a fresh, staged, and guest-ready space prepared with care.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container cta">
+        <div>
+          <h2>Need a reliable cleaner for your lake property?</h2>
+          <p class="muted">
+            Whether you need regular turnovers, a one-time deep clean, move-out service, or post-construction cleanup, Toledo Bend Turnovers LLC is here to help keep your property looking its best.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:13184310374">Call Now</a>
+            <a class="btn btn-secondary" href="sms:13184310374">Text for a Quote</a>
+          </div>
+        </div>
+
+        <aside class="contact-box">
+          <h3>Contact</h3>
+          <ul class="contact-list">
+            <li><strong>Business:</strong> Toledo Bend Turnovers LLC</li>
+            <li><strong>Phone:</strong> <a href="tel:13184310374">318-431-0374</a></li>
+            <li><strong>Area:</strong> Toledo Bend Lake, Sabine Parish & nearby communities</li>
+            <li><strong>Best for:</strong> Airbnb turnovers, deep cleans, move-outs, and post-construction cleanup</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <div>© <span id="year"></span> Toledo Bend Turnovers LLC. All rights reserved.</div>
+      <div>Built as a single-file webpage for easy editing and sharing.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
