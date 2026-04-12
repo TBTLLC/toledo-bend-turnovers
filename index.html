@@ -1,82 +1,242 @@
-<!DOCTYPE html>
-        </div>
-      </div>
-    </section>
 
+export default function ToledoBendTurnoversPage() {
+  const slideshowImages = [
+    { src: "/IMG_4848.jpeg", alt: "Living room staged" },
+    { src: "/IMG_4849.jpeg", alt: "Room wide clean view" },
+    { src: "/IMG_4850.jpeg", alt: "Full room clean and staged" },
+    { src: "/IMG_4851.jpeg", alt: "Bathroom vanity clean" },
+    { src: "/IMG_4854.jpeg", alt: "Bathroom clean bright" },
+    { src: "/IMG_4855.jpeg", alt: "Clean bathroom setup" },
+    { src: "/IMG_4858.jpeg", alt: "Styled dining setup" },
+    { src: "/IMG_4859.jpeg", alt: "Kitchen wide clean view" },
+    { src: "/IMG_4860.jpeg", alt: "Coffee bar kitchen clean" },
+    { src: "/IMG_4862.jpeg", alt: "Bed styled with towels" },
+    { src: "/IMG_4895.jpeg", alt: "Bedroom clean setup" },
+    { src: "/IMG_4906.jpeg", alt: "Organized cleaning supplies" },
+    { src: "/IMG_4907.jpeg", alt: "Supplies organized neatly" },
+    { src: "/IMG_4908.jpeg", alt: "Organized storage area" },
+    { src: "/IMG_4922.jpeg", alt: "Kitchen cleaned and staged" },
+    { src: "/IMG_4923.jpeg", alt: "Clean living room setup" },
+    { src: "/IMG_4924.jpeg", alt: "Outdoor patio cleaned" },
+  ]
 
-    <section id="pricing" class="section">
-      <div class="container pricing-wrap">
-        <div class="pricing-copy card">
-          <span class="eyebrow">Pricing</span>
-          <h3>Simple starting rates</h3>
-          <p class="lead">Final pricing may vary by size, condition, setup time, and property needs.</p>
-          <div class="pricing-grid">
-            <div class="price-card featured">
-              <h4>1–2 Bedroom Turnovers</h4>
-              <div class="price">$75 starting price</div>
-              <div class="tiny">Quick turnovers for smaller rental spaces.</div>
+  const services = [
+    {
+      title: "1–2 Bedroom Turnover",
+      price: "$90–$105",
+      details:
+        "Standard turnover cleaning for smaller vacation rentals with a polished, guest-ready finish.",
+    },
+    {
+      title: "3 Bedroom Turnover",
+      price: "$110–$135",
+      details:
+        "Detailed turnover service for mid-size rentals, including reset and presentation touches.",
+    },
+    {
+      title: "4 Bedroom Turnover",
+      price: "$140–$170",
+      details:
+        "Larger property turnover cleaning designed to leave the space clean, organized, and ready for arrivals.",
+    },
+    {
+      title: "Deep Cleaning",
+      price: "15¢–20¢ per sq. ft.",
+      details:
+        "A more detailed top-to-bottom clean for seasonal resets, neglected spaces, and full refreshes.",
+    },
+    {
+      title: "Post-Construction Cleaning",
+      price: "25¢–35¢ per sq. ft.",
+      details:
+        "Detailed post-renovation cleanup for dust, debris, and finishing touches before the property is guest-ready.",
+    },
+  ]
+
+  const turnoverIncludes = [
+    "Beds stripped and reset to a guest-ready standard",
+    "Bathrooms cleaned and sanitized",
+    "Kitchen cleaned and reset",
+    "Trash removed and liners replaced",
+    "Floors vacuumed and mopped",
+    "Dusting and surface wipe-downs",
+    "Interior appliance cleaning",
+    "On-site laundry if applicable",
+    "Restocking of host-provided supplies",
+    "Final walk-through for presentation and cleanliness",
+  ]
+
+  return (
+    <div className="min-h-screen bg-stone-50 text-stone-800">
+      <header className="relative overflow-hidden border-b border-stone-200 bg-white">
+        <img
+          src="/TBT Pricelist.PNG"
+          alt="Background Logo"
+          className="absolute inset-0 m-auto w-[600px] opacity-10 pointer-events-none"
+        />
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-50 via-rose-50/50 to-white" />
+        <div className="relative mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-2 md:px-10 lg:px-12 lg:py-24">
+          <div className="flex flex-col justify-center">
+            
+            <p className="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-teal-700">
+              Toledo Bend Turnovers
+            </p>
+            <h1 className="max-w-xl text-4xl font-semibold leading-tight md:text-5xl">
+              Guest-ready cleaning with elegant lake-house style.
+            </h1>
+            <p className="mt-5 max-w-xl text-base leading-7 text-stone-600 md:text-lg">
+              Toledo Bend Turnovers offers polished vacation rental turnovers, deep cleaning, and post-construction cleaning with a clean, feminine, elevated look that matches your brand.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="#pricing"
+                className="rounded-full bg-teal-700 px-6 py-3 text-sm font-medium text-white shadow-sm transition hover:scale-[1.02]"
+              >
+                View Pricing
+              </a>
+              <a
+                href="#gallery"
+                className="rounded-full border border-stone-300 bg-white px-6 py-3 text-sm font-medium text-stone-800 transition hover:scale-[1.02]"
+              >
+                See Photos
+              </a>
             </div>
-            <div class="price-card">
-              <h4>3 Bedroom</h4>
-              <div class="price">$110–$135</div>
-              <div class="tiny">Guest-ready reset with full common-area refresh.</div>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-2">
+            <div className="rounded-[2rem] bg-white p-5 shadow-xl shadow-stone-200/60">
+              <img
+                src={slideshowImages[0].src}
+                alt={slideshowImages[0].alt}
+                className="h-72 w-full rounded-[1.5rem] object-cover"
+              />
             </div>
-            <div class="price-card">
-              <h4>4 Bedroom</h4>
-              <div class="price">$140–$170</div>
-              <div class="tiny">Larger lake properties and multi-room setups.</div>
-            </div>
-            <div class="price-card">
-              <h4>Deep Cleaning</h4>
-              <div class="price">$0.20 / sq. ft.</div>
-              <div class="tiny">Wall washing, baseboards, fans, under furniture, and full-home detailing.</div>
+            <div className="rounded-[2rem] bg-white p-5 shadow-xl shadow-stone-200/60 md:mt-10">
+              <img
+                src={slideshowImages[2].src}
+                alt={slideshowImages[2].alt}
+                className="h-72 w-full rounded-[1.5rem] object-cover"
+              />
             </div>
           </div>
         </div>
-        <div class="pricing-image card">
-          <span class="eyebrow">Branded price list</span>
-          <h3>Full pricing sheet</h3>
-          <div class="price-list-img">
-            <img src="TBT Pricelist.PNG" alt="Toledo Bend Turnovers price list" />
+      </header>
+
+      <main>
+        
+
+        <section id="pricing" className="bg-white py-16">
+          <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
+            <div className="mb-10 max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-teal-700">
+                Price List
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Vacation rental cleaning pricing.</h2>
+              <p className="mt-4 text-base leading-7 text-stone-600">
+                Pricing follows your saved price list and can vary based on condition, extras, and property setup.
+              </p>
+            </div>
+
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {services.map((service) => (
+                <div
+                  key={service.title}
+                  className="rounded-[1.75rem] border border-stone-200 bg-stone-50 p-6 shadow-sm"
+                >
+                  <h3 className="text-xl font-semibold text-stone-800">{service.title}</h3>
+                  <p className="mt-3 text-lg font-semibold text-teal-700">{service.price}</p>
+                  <p className="mt-3 text-sm leading-7 text-stone-600">{service.details}</p>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
+        <section className="mx-auto max-w-7xl px-6 py-16 md:px-10 lg:px-12">
+          <div className="grid items-start gap-8 lg:grid-cols-[1fr_1.2fr]">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-rose-500">
+                What’s Included
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Guest-ready details that matter.</h2>
+              <p className="mt-4 text-base leading-7 text-stone-600">
+                Every clean is focused on presentation, comfort, and the small finishing details guests notice.
+              </p>
+            </div>
 
-    <section id="featured" class="section" style="padding-top:0">
-      <div class="container">
-        <div class="slideshow-card card">
-          <span class="eyebrow">Featured after photos</span>
-          <h3>Finished spaces that make an impression</h3>
-          <div class="slideshow-shell">
-            <div class="slides" id="slides">
-              <div class="slide active">
-                <img src="IMG_4854.jpeg" alt="Finished studio living area" />
-                <div class="slide-caption">Bright finished living space with clean lines and styled details</div>
-              </div>
-              <div class="slide">
-                <img src="IMG_4852.jpeg" alt="Finished bathroom" />
-                <div class="slide-caption">Clean bathroom finish with polished mirror and fresh towels</div>
-              </div>
-              <div class="slide">
-                <img src="IMG_4859.jpeg" alt="Finished kitchen" />
-                <div class="slide-caption">Guest-ready kitchen with styled place settings</div>
-              </div>
-              <div class="slide">
-                <img src="IMG_4783(2).jpeg" alt="Finished gray bedroom" />
-                <div class="slide-caption">Simple, polished bedroom reset</div>
-              </div>
-              <div class="slide">
-                <img src="IMG_4924.jpeg" alt="Patio seating" />
-                <div class="slide-caption">Outdoor spaces matter too</div>
-              </div>
-              <div class="slide">
-                <img src="IMG_4851.jpeg" alt="Finished bathroom detail" />
-                <div class="slide-caption">Small details help the whole property feel cared for</div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              {turnoverIncludes.map((item) => (
+                <div
+                  key={item}
+                  className="rounded-[1.5rem] border border-stone-200 bg-white px-5 py-4 text-sm leading-6 shadow-sm"
+                >
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section id="gallery" className="bg-white py-16">
+          <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-12">
+            <div className="mb-10 max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.35em] text-teal-700">
+                Photo Slideshow
+              </p>
+              <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Clean spaces, beautifully presented.</h2>
+              <p className="mt-4 text-base leading-7 text-stone-600">
+                Your photos will display here in a clean, swipeable slideshow.
+              </p>
+            </div>
+
+            <div className="relative overflow-hidden rounded-[2rem] border border-stone-200 bg-stone-100 p-4 shadow-sm">
+              <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2">
+                {slideshowImages.map((image, index) => (
+                  <div
+                    key={`${image.alt}-${index}`}
+                    className="min-w-full snap-center rounded-[1.5rem] bg-white p-3"
+                  >
+                    <img
+                      src={image.src}
+                      alt={image.alt}
+                      className="h-[420px] w-full rounded-[1.25rem] object-cover"
+                    />
+                  </div>
+                ))}
               </div>
             </div>
-            <button class="slide-btn prev" aria-label="Previous slide">❮</button>
-            <button class="slide-btn next" aria-label="Next slide">❯</button>
-            <div class="dots" id
+
+            
+          </div>
+        </section>
+
+        <section id="contact" className="mx-auto max-w-7xl px-6 py-16 md:px-10 lg:px-12">
+          <div className="rounded-[2rem] bg-gradient-to-r from-teal-700 to-teal-600 px-8 py-12 text-white shadow-xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-teal-100">
+              Contact
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold md:text-4xl">Ready to get on the schedule?</h2>
+            <p className="mt-4 max-w-2xl text-base leading-7 text-teal-50">
+              Reach out for turnover cleaning, deep cleaning, or post-construction cleaning in the Toledo Bend area.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <a
+                href="tel:3184310374"
+                className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-teal-700"
+              >
+                Call 318-431-0374
+              </a>
+              <a
+                href="sms:3184310374"
+                className="rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white"
+              >
+                Text for a Quote
+              </a>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  )
+}
 
